@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<p id="1">结果显示</P>
+<button onclick="cookieCheck()">提交</button>
+
+<script type="text/javascript">
+
+function cookieCheck(){
+
+if(document.cookie.length>0){
+	c_start = document.cookie.indexOf("code=");//document.getElementById("1").innerHTML =1;
+	if(c_start != -1){
+		c_start = c_start + 5;
+		c_end = document.cookie.indexOf(";",c_start);
+		if(c_end == -1){
+			c_end = document.cookie.length;		//document.getElementById("1").innerHTML =c_end;
+		} 
+		//System.out.println(unescape(document.cookie,substring(c_start,c_end));
+
+		document.getElementById("1").innerHTML = unescape(document.cookie.substring(c_start,c_end));
+		//document.getElementById("1").innerHTML =1;
+	}
+}else{
+	document.getElementById("1").innerHTML =2;
+}
+}
+</script>
+
+</body>
+</html>
